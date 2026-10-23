@@ -3,6 +3,7 @@ package com.yaahua.vcam.ui
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
@@ -50,6 +51,8 @@ fun HomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
+        BrandHeader()
+
         StatusCard(
             isXposedActive = mainUiState.isXposedActive,
             hasPermission = mainUiState.hasPermission,
@@ -63,6 +66,49 @@ fun HomeScreen(
         )
 
         SupportCard()
+    }
+}
+
+@Composable
+private fun BrandHeader() {
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        shape = MaterialTheme.shapes.large,
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.55f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = Icons.Default.Videocam,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(34.dp)
+            )
+            Spacer(modifier = Modifier.width(14.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.ExtraBold),
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Spacer(modifier = Modifier.height(3.dp))
+                Text(
+                    text = "NEON CAMERA CONTROL",
+                    style = MaterialTheme.typography.labelSmall.copy(letterSpacing = 2.sp),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .size(9.dp)
+                    .clip(androidx.compose.foundation.shape.CircleShape)
+                    .background(MaterialTheme.colorScheme.tertiary)
+            )
+        }
     }
 }
 
@@ -300,7 +346,7 @@ fun SupportCard() {
                     .fillMaxWidth()
                     .clickable {
                         context.startActivity(
-                            Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Yaahua/vcam"))
+                            Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/xVoidExecutor/vcam-Update"))
                         )
                     }
                     .padding(vertical = 8.dp),
