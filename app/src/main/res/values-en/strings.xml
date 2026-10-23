@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LIMON'S VenomCam</string>
+    <string name="app_name">LIMON\'S VenomCam</string>
     <string name="description">Visit the project repository for updates, usage notes, and bug reports.</string>
     <string name="Warning">Use responsibly and only with proper authorization.</string>
     <string name="permission_lack_warn">Required permissions are missing</string>
