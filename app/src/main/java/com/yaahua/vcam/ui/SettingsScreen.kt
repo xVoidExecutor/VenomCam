@@ -268,7 +268,7 @@ fun SettingsScreen(viewModel: MainViewModel) {
             SettingsDivider()
             SettingsClickRow(
                 icon = Icons.Default.Code, title = "GitHub", subtitle = stringResource(R.string.support_github),
-                onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Yaahua/vcam"))) }
+                onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/xVoidExecutor/vcam-Update"))) }
             )
         }
 
